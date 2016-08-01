@@ -1,0 +1,28 @@
+<div class="module">
+    <h1>Filter</h1>
+
+    <table>
+        <tr>
+            <td>Type</td>
+            <td>
+                <select>
+                    <option ng-repeat="type in module.types" ng-model="module.type" value="type">{{type}}</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Freq</td>
+            <td><input type="number" ng-model="module.frequency.value" /></td>
+        </tr>
+
+        <tr>
+            <td>Gain</td>
+            <td><input type="number" ng-model="module.gain.value" /></td>
+        </tr>
+
+        <tr>
+            <td>Detune</td>
+            <td><input type="number" ng-model="module.detune.value" /></td>
+        </tr>
+    </table>
+</div>

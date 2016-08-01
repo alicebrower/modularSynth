@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Modular Synth</title>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/angular/angular.min.js"></script>
+    <script src="node_modules/angular-aria/angular-aria.js"></script>
+    <script src="node_modules/angular-animate/angular-animate.js"></script>
+    <script src="node_modules/angular-material/angular-material.js"></script>
+
+    <script src="js/core.js"></script>
+
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css" />
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style/style.css" />
+</head>
+
+<body ng-controller="mainController">
+    <table>
+        <tr>
+            <td><wave-generator osc="osc1" routes="inputs"></wave-generator></td>
+            <td><wave-generator osc="osc2" routes="inputs"></wave-generator></td>
+            <td><wave-generator osc="osc3" routes="inputs"></wave-generator></td>
+        </tr>
+
+        <tr>
+            <td><gain-module module="out"></gain-module></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <button ng-click="play()">Play</button>
+</body>
+</html>

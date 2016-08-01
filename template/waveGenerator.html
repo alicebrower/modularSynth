@@ -1,0 +1,85 @@
+<div class="module">
+    <h1>{{osc.name}}</h1>
+    <table>
+        <tr>
+            <td>Freq</td>
+            <td>
+                <input required type="number" step="5" name="rate" ng-model="osc.osc.frequency.value" />
+            </td>
+        </tr>
+
+        <tr>
+            <td>Type</td>
+            <td>
+                <md-radio-group layout="row" ng-model="osc.osc.type">
+                    <md-radio-button value="sine"></md-radio-button>
+                    <md-radio-button value="triangle"></md-radio-button>
+                    <md-radio-button value="square"></md-radio-button>
+                    <md-radio-button value="sawtooth"></md-radio-button>
+                </md-radio-group>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Freq Osc</td>
+            <td>
+                <md-switch ng-click="osc.toggleFreqOsc(!osc.freqOsc.on)" aria-label="Switch 1"></md-switch>
+                <i class="fa fa-arrow-left fa-lg"></i>
+                {{osc.freqOsc.sourceName}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>Freq</td>
+            <td><input required type="number" step="5" name="rate" ng-model="osc.freqOsc.default.frequency.value" /></td>
+        </tr>
+
+        <tr>
+            <td>Type</td>
+            <td>
+                <md-radio-group layout="row" ng-model="osc.freqOsc.default.type">
+                    <md-radio-button value="sine"></md-radio-button>
+                    <md-radio-button value="triangle"></md-radio-button>
+                    <md-radio-button value="square"></md-radio-button>
+                    <md-radio-button value="sawtooth"></md-radio-button>
+                </md-radio-group>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Gain Osc</td>
+            <td>
+                <md-switch ng-click="osc.toggleGainOsc(!osc.gainOsc.on)" aria-label="Switch 1"></md-switch>
+                <i class="fa fa-arrow-left fa-lg"></i>
+                {{osc.gainOsc.sourceName}}
+            </td>
+        </tr>
+
+        <tr>
+            <td>Freq</td>
+            <td><input required type="number" step="5" name="rate" ng-model="osc.gainOsc.default.frequency.value" /></td>
+        </tr>
+
+        <tr>
+            <td>Type</td>
+            <td>
+                <md-radio-group layout="row" ng-model="osc.gainOsc.default.type">
+                    <md-radio-button value="sine"></md-radio-button>
+                    <md-radio-button value="triangle"></md-radio-button>
+                    <md-radio-button value="square"></md-radio-button>
+                    <md-radio-button value="sawtooth"></md-radio-button>
+                </md-radio-group>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Route To</td>
+            <td>
+                <i class="fa fa-arrow-right fa-lg"></i>
+                <select ng-model="osc.destination">
+                    <option ng-repeat="value in routes" value="{{value.name}}">{{value.name}}</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+</div>
